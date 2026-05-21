@@ -1,0 +1,15 @@
+create table contatos (
+	id            serial not null,
+	nome          varchar (100) not null,
+	celular       varchar (20) not null,
+	bloqueado     boolean not null default false,
+	data          timestamp not null default now(),
+	observacoes   text
+);
+
+ALTER TABLE CONTATOS ADD CONSTRAINT PK_CONTATOS
+PRIMARY KEY(ID);
+
+SELECT * 
+  FROM CONTATOS;
+  
