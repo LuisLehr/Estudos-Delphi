@@ -14,7 +14,7 @@ Os projetos estão separados por pasta e podem ser abertos individualmente pelo 
 | `Cadastro de Livros` | Cadastro de livros com campos de título, autor, gênero, idioma, resumo, canais de venda e disponibilidade. | Não |
 | `Agenda de contatos` | Agenda para cadastro, busca e manutenção de contatos, com dados como nome, celular, observações, bloqueio e data de cadastro. | Sim, PostgreSQL |
 | `Clinica` | Sistema desktop para clínica, com cadastro de pacientes e agendamentos, menu principal e telas separadas para manutenção dos dados. | Sim, PostgreSQL |
-| `Primeira Logica de Programacao` | Primeiro projeto usando IF, ELSE IF e ELSE no evento OnClick de um botão de um form, feito no intuito de aprender sobre a sintaxe do Delphi |
+| `Primeira Logica de Programacao` | Primeiro projeto usando IF, ELSE IF e ELSE no evento OnClick de um botão de um form, feito no intuito de aprender sobre a sintaxe do Delphi | Não |
 
 > A pasta `Lista de Emails` ainda não possui arquivos de projeto versionados.
 
