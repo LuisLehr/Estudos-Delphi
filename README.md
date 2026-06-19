@@ -10,11 +10,13 @@ Os projetos estão separados por pasta e podem ser abertos individualmente pelo 
 | --- | --- | --- |
 | `Primeiro Sistema` | Projeto inicial com formulário simples para entrada de nome e interação básica com componentes visuais. | Não |
 | `Primeiro Menu` | Exemplo de aplicação com menu principal, opções de sistema, cadastro e consultas. | Não |
+| `Primeira Logica de Programacao` | Primeiro projeto usando IF, ELSE IF e ELSE no evento OnClick de um botão de um form, feito no intuito de aprender sobre a sintaxe do Delphi. | Não |
+| `Caixas de Aviso` | Projeto de estudo com diferentes tipos de caixas de mensagem, incluindo mensagem simples, alerta, erro, informação, pergunta, OK/Cancelar, Sim/Não e confirmação para sair. | Não |
 | `Cadastro` | Tela de cadastro de clientes com seções para dados pessoais, contato, endereço, trabalho e análise de crédito. | Não |
 | `Cadastro de Livros` | Cadastro de livros com campos de título, autor, gênero, idioma, resumo, canais de venda e disponibilidade. | Não |
 | `Agenda de contatos` | Agenda para cadastro, busca e manutenção de contatos, com dados como nome, celular, observações, bloqueio e data de cadastro. | Sim, PostgreSQL |
+| `Busca Clientes` | Consulta de clientes em banco PostgreSQL, com filtro por nome ou bairro e exibição dos resultados em um grid. | Sim, PostgreSQL |
 | `Clinica` | Sistema desktop para clínica, com cadastro de pacientes e agendamentos, menu principal e telas separadas para manutenção dos dados. | Sim, PostgreSQL |
-| `Primeira Logica de Programacao` | Primeiro projeto usando IF, ELSE IF e ELSE no evento OnClick de um botão de um form, feito no intuito de aprender sobre a sintaxe do Delphi | Não |
 
 > A pasta `Lista de Emails` ainda não possui arquivos de projeto versionados.
 
@@ -40,18 +42,22 @@ Exemplos de arquivos principais:
 
 - `Primeiro Sistema/PrimeiroSistema.dproj`
 - `Primeiro Menu/PrimeiroMenu.dproj`
+- `Primeira Logica de Programacao/PrimeiraLogica.dproj`
+- `Caixas de Aviso/Avisos.dproj`
 - `Cadastro/Cadastro.dproj`
 - `Cadastro de Livros/Cadastro_de_Livros.dproj`
 - `Agenda de contatos/Agenda.dproj`
+- `Busca Clientes/BuscaCliente.dproj`
 - `Clinica/Clinica.dproj`
 
 ## Configuração de banco de dados
 
-Os projetos `Agenda de contatos` e `Clinica` utilizam PostgreSQL via FireDAC.
+Os projetos `Agenda de contatos`, `Busca Clientes` e `Clinica` utilizam PostgreSQL via FireDAC.
 
 As conexões atuais estão configuradas nos DataModules dos projetos:
 
 - `Agenda de contatos/unitDM.dfm`
+- `Busca Clientes/unitDM.dfm`
 - `Clinica/unitDM.dfm`
 
 Configuração local usada atualmente:
@@ -76,18 +82,23 @@ Caso o PostgreSQL esteja instalado em outro caminho, ajuste a propriedade `Vendo
 
 Antes de executar os projetos com banco de dados, crie um banco chamado `prod` no PostgreSQL ou altere o nome do banco na conexão do projeto.
 
-Depois, execute o script SQL correspondente:
+Depois, execute o script SQL correspondente quando ele existir:
 
 | Projeto | Script |
 | --- | --- |
 | `Agenda de contatos` | `Agenda de contatos/CREATE TABLE.txt` |
 | `Clinica` | `Clinica/CREATE TABLE.sql` |
+| `Busca Clientes` | Não possui script SQL versionado no momento |
 
 ### Tabelas utilizadas
 
 O projeto `Agenda de contatos` cria a tabela:
 
 - `contatos`
+
+O projeto `Busca Clientes` consulta a tabela:
+
+- `CLIENTES`
 
 O projeto `Clinica` cria as tabelas:
 
@@ -100,6 +111,7 @@ O script da Clínica também cria a chave estrangeira entre agendamentos e pacie
 
 - As credenciais de banco atuais são próprias de ambiente local de desenvolvimento.
 - Para outra máquina, pode ser necessário ajustar usuário, senha, nome do banco, servidor e caminho da `libpq.dll`.
+- O projeto `Busca Clientes` espera que a tabela `CLIENTES` já exista no banco configurado.
 - Os arquivos executáveis e arquivos gerados pela IDE não devem ser versionados no Git.
 - O repositório possui um `.gitignore` configurado para ignorar saídas de compilação, arquivos temporários e arquivos locais do Delphi.
 
@@ -127,6 +139,7 @@ Win64/
 Debug/
 Release/
 __history/
+__recovery/
 *.exe
 *.dll
 *.dcu
@@ -141,5 +154,6 @@ Os executáveis compilados não ficam versionados junto com o código-fonte. Qua
 Atualmente, o projeto mais completo é o `Clinica`, que pode receber releases próprias conforme novas versões forem finalizadas.
 
 ---
-✒️ Desenvolvido por:  
+Desenvolvido por:
+
 - *Luis Henrique Lehr*
